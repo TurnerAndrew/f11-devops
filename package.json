@@ -9,5 +9,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TurnerAndrew/f11-devops.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TurnerAndrew/f11-devops/issues"
+  },
+  "homepage": "https://github.com/TurnerAndrew/f11-devops#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
