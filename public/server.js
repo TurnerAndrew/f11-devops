@@ -10,7 +10,7 @@ var rollbar = new Rollbar({
 });
 
 // record a generic message and send it to Rollbar
-rollbar.log("Hello world!");
+// rollbar.log("Hello world!");
 
 app.use(express.json())
 
@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/students', (req, res) => {
+    rollbar.info('A user requested the list of students')
     res.status(200).send(students)
 })
 
