@@ -48,6 +48,7 @@ app.post('/api/students', (req, res) => {
         }
     } catch (err) {
         console.log(err)
+        rollbar.error(err)
     }
 })
 
@@ -55,6 +56,8 @@ app.delete('/api/students/:index', (req, res) => {
     const targetIndex = +req.params.index
 
     students.splice(targetIndex, 1)
+    
+    rollbar.info('Someone deleted a student')
 
     res.status(200).send(students)
 })
