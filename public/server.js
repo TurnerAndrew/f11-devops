@@ -2,6 +2,16 @@ const express = require('express')
 const app = express()
 const path = require('path')
 
+var Rollbar = require("rollbar");
+var rollbar = new Rollbar({
+  accessToken: 'dd1d04d4f7624e2294ef55a2726312b0',
+  captureUncaught: true,
+  captureUnhandledRejections: true
+});
+
+// record a generic message and send it to Rollbar
+rollbar.log("Hello world!");
+
 app.use(express.json())
 
 const students = ['Adrian', 'Norman', 'Spencer']
@@ -43,9 +53,6 @@ app.delete('/api/students/:index', (req, res) => {
 
     res.status(200).send(students)
 })
-
-
-
 
 
 const port = process.env.PORT || 5050
